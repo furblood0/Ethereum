@@ -1,0 +1,22 @@
+{
+  "name": "mesaj-tahtasi",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "compile": "hardhat compile && node scripts/copy-abi.js",
+    "test": "hardhat test && node scripts/copy-abi.js",
+    "node": "hardhat node",
+    "deploy:local": "hardhat run scripts/deploy.js --network localhost",
+    "deploy:sepolia": "hardhat run scripts/deploy.js --network sepolia",
+    "dev": "vite --config frontend/vite.config.mjs"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "dotenv": "^16.4.5",
+    "hardhat": "^2.22.17",
+    "vite": "^6.0.0"
+  },
+  "dependencies": {
+    "ethers": "^6.13.5"
+  }
+}

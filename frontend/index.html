@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mesaj Tahtası</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect fill='%231e3d34' width='16' height='16'/></svg>" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,560;7..72,680&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <main>
+      <header class="top">
+        <p class="eyebrow">Ethereum</p>
+        <div class="title-row">
+          <h1>Mesaj Tahtası</h1>
+          <button id="connect" type="button">Cüzdanı bağla</button>
+        </div>
+        <p class="lede">
+          Notunu zincire yaz. Not, kontratın içinde kalır. Biriken ücreti yalnızca tahtanın sahibi çeker.
+        </p>
+      </header>
+
+      <ol class="steps">
+        <li>Cüzdanı bağla</li>
+        <li>Notu yaz, küçük bir ETH ile gönder</li>
+        <li>Not listede kalsın</li>
+      </ol>
+
+      <section class="card">
+        <label for="text">Notun</label>
+        <textarea id="text" rows="4" placeholder="Kısa bir not bırak"></textarea>
+        <div class="composer-row">
+          <span id="counter">0 / 280 bayt</span>
+          <button id="post" type="button">Notu zincire yaz</button>
+        </div>
+        <p id="hint" class="hint">
+          Nota küçük bir ETH eklenir ve kontratta birikir. Ağ, bunun üstüne kendi işlem ücretini (gas) alır.
+        </p>
+      </section>
+
+      <section class="treasury">
+        <p>Sahip: <strong id="owner" title="">—</strong></p>
+        <p>Tahtadaki ücret: <strong id="balance">—</strong></p>
+        <button id="withdraw" type="button" hidden>Ücreti çek</button>
+      </section>
+
+      <p id="status" role="status"></p>
+
+      <h2>Notlar</h2>
+      <section id="list" aria-live="polite"></section>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

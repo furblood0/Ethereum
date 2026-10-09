@@ -1,0 +1,221 @@
+:root {
+  color: #221e1a;
+  background: #f4efe4;
+  font-family: "Outfit", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  width: min(40rem, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 2.5rem 0 4rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.4rem;
+  color: #6f675e;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+h1,
+h2,
+.note-text {
+  font-family: "Literata", serif;
+  font-weight: 560;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.2rem, 5vw, 3.3rem);
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+
+h2 {
+  margin: 1.6rem 0 0.2rem;
+  font-size: 1.35rem;
+}
+
+.lede,
+.hint,
+.treasury,
+.note-meta,
+#status,
+.empty {
+  color: #3f3933;
+}
+
+.lede {
+  max-width: 36rem;
+  margin: 0.8rem 0 0;
+  font-size: 1.05rem;
+}
+
+.steps {
+  display: flex;
+  gap: 0.7rem;
+  margin: 1.4rem 0 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: step;
+}
+
+.steps li {
+  flex: 1;
+  margin: 0;
+  padding: 0.75rem 0.8rem;
+  background: #fffaf3;
+  border: 1px solid #e4d7c3;
+  font-size: 0.92rem;
+}
+
+.steps li::before {
+  counter-increment: step;
+  content: counter(step);
+  margin-right: 0.45rem;
+  color: #1e3d34;
+  font-weight: 600;
+}
+
+.card,
+.treasury {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #fffaf3;
+  border: 1px solid #e4d7c3;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+
+textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d9cbb6;
+  border-radius: 0;
+  background: #fff;
+  color: inherit;
+  font: inherit;
+  resize: vertical;
+}
+
+.composer-row,
+.treasury {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.treasury {
+  flex-wrap: wrap;
+}
+
+.treasury p {
+  margin: 0;
+}
+
+.composer-row {
+  margin-top: 0.7rem;
+}
+
+#counter {
+  color: #6f675e;
+  font-size: 0.85rem;
+}
+
+button {
+  border: 0;
+  background: #1e3d34;
+  color: #f6f1e7;
+  font: inherit;
+  font-weight: 600;
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+#connect,
+#withdraw {
+  background: transparent;
+  color: #1e3d34;
+  border: 1px solid #1e3d34;
+}
+
+.hint {
+  margin: 0.75rem 0 0;
+  font-size: 0.92rem;
+}
+
+#status {
+  min-height: 1.5rem;
+  margin: 0.9rem 0 0;
+}
+
+#status.error {
+  color: #8d2f2a;
+}
+
+.note {
+  padding: 1rem 0;
+  border-top: 1px solid #e4d7c3;
+}
+
+.note-text {
+  margin: 0 0 0.35rem;
+  font-size: 1.25rem;
+  overflow-wrap: anywhere;
+}
+
+.note-meta,
+.empty {
+  margin: 0;
+  color: #6f675e;
+  font-size: 0.9rem;
+}
+
+:focus-visible {
+  outline: 2px solid #1e3d34;
+  outline-offset: 3px;
+}
+
+@media (max-width: 640px) {
+  .title-row,
+  .steps,
+  .composer-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #connect,
+  #post,
+  #withdraw {
+    width: 100%;
+  }
+}
